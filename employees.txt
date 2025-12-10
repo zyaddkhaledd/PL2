@@ -1,0 +1,3 @@
+ID|Name|Password|Role|Salary|Bonus|PhoneNumber|Department
+1234|zyad|123456789|Employee|20000.0|1890.0|1009883882|CS
+20240376|zyad|123456789|Employee|15000.0|3000.0|1112176959|CS
