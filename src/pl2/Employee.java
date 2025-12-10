@@ -13,7 +13,8 @@ public class Employee extends User {
     private double salary;
     private double bonus;
     private int phoneNumber;
-    
+    private EmployeeType type; 
+
     public Employee() { }
 
     public Employee(int id, String name, String password, Role role,
@@ -24,7 +25,7 @@ public class Employee extends User {
         this.salary = salary;
         this.bonus = bonus;
         this.phoneNumber = phoneNumber;
-        
+        this.type = type; 
     }
 
     public double getSalary() {
@@ -50,18 +51,22 @@ public class Employee extends User {
     public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+    
+    public EmployeeType getEmployeeType() {
+        return type;
+    }
+
+    public void setEmployeeType(EmployeeType type) {
+        this.type = type;
+    }
 
     @Override
-public String toString() {
-    return "ID: " + getId() +
-           " | Name: " + getName() +
-           " | Salary: " + salary +
-           " | Bonus: " + bonus +
-           " | Phone: " + phoneNumber;
+    public String toString() {
+        return "ID: " + getId() +
+               " | Name: " + getName() +
+               " | Salary: " + salary +
+               " | Bonus: " + bonus +
+               " | Phone: " + phoneNumber +
+               " | Department: " + type.getDepartment();
+    }
 }
-
-   
-
-
-}
-
