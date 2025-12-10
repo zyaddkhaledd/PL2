@@ -11,12 +11,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-/**
- *
- * @author ZYAD KHALED
- */
- public class EmployeeFileHandler {
-private static final String FILE_PATH = "employees.txt"; 
+
+public class EmployeeFileHandler {
+    private static final String FILE_PATH = "employees.txt"; 
 
     public static ArrayList<Employee> loadEmployees() {
         ArrayList<Employee> employees = new ArrayList<>();
@@ -43,9 +40,9 @@ private static final String FILE_PATH = "employees.txt";
                         
                         Employee emp = new Employee(id, name, password, role, salary, bonus, phoneNumber, type);
                         employees.add(emp);
-                        
-                    } catch (NumberFormatException | IllegalArgumentException ex) {
+                    } catch (IllegalArgumentException ex) { // <--- تم إصلاح الخطأ وإضافة جملة catch الناقصة
                         System.err.println("Error parsing employee data line: " + line);
+                        // هذه الكتلة ضرورية لمعالجة أخطاء NumberFormatException و Role.valueOf
                     }
                 }
             }
@@ -79,4 +76,3 @@ private static final String FILE_PATH = "employees.txt";
         }
     }
 }
-
