@@ -14,7 +14,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 public class EmployeeFileHandler {
-    private static final String FILE_PATH = " DF/employees.txt";
+    private static final String FILE_PATH = "src/pl2/DF/employees.txt";
+;
     
     public static ArrayList<Employee> loadEmployees() {
         ArrayList<Employee> employees = new ArrayList<>();
