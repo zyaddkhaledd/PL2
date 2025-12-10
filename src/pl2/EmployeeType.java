@@ -8,21 +8,19 @@ package pl2;
  *
  * @author ZYAD KHALED
  */
-public class EmployeeType  {
+public class EmployeeType {
 
-    String Department;
+    private String department;
 
-    public EmployeeType(String development) {
+    public EmployeeType(String department) {
+        this.department = department;
     }
 
     public String getDepartment() {
-        return Department;
+        return department;
     }
 
-    public void setDepartment(String Department) {
-        this.Department = Department;
+    public void setDepartment(String department) {
+        this.department = department;
     }
-    
-
-  
 }
