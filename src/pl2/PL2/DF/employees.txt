@@ -1,0 +1,4 @@
+ID|Name|Password|Role|Salary|Bonus|PhoneNumber|Department
+2025009|nour omar rady |884422|Employee|20000.0|500.0|1110995093|hr 
+2225008|Haidi adel ahmed |228844|Employee|2.0E8|5550000.0|155009825|It
+12345|zyad|12345|Employee|8900000.0|90000.0|927838380|AI
