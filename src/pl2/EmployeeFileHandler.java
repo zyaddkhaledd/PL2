@@ -40,9 +40,9 @@ public class EmployeeFileHandler {
                         
                         Employee emp = new Employee(id, name, password, role, salary, bonus, phoneNumber, type);
                         employees.add(emp);
-                    } catch (IllegalArgumentException ex) { // <--- تم إصلاح الخطأ وإضافة جملة catch الناقصة
+                    } catch (IllegalArgumentException ex) { 
                         System.err.println("Error parsing employee data line: " + line);
-                        // هذه الكتلة ضرورية لمعالجة أخطاء NumberFormatException و Role.valueOf
+                        
                     }
                 }
             }
