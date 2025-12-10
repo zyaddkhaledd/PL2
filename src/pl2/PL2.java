@@ -22,7 +22,8 @@ public class PL2 {
             System.out.println("\n===== Employee System =====");
             System.out.println("1) Add Employee");
             System.out.println("2) Show All Employees");
-            System.out.println("3) Exit");
+            System.out.println("3) Update Employee Data"); 
+            System.out.println("4) Exit");
             System.out.print("Choose: ");
             int choice = input.nextInt();
             input.nextLine();
@@ -68,19 +69,33 @@ public class PL2 {
                 manager.addEmployee(emp);
 
             } else if (choice == 2) {
-
                 System.out.println(" All Employees");
                 manager.displayAll();
 
             } else if (choice == 3) {
+                
+                System.out.print("Enter ID of Employee to Update: ");
+                int idToUpdate = input.nextInt();
+                
+                System.out.print("Enter NEW Salary: ");
+                double newSalary = input.nextDouble();
+                
+                System.out.print("Enter NEW Bonus: ");
+                double newBonus = input.nextDouble();
+                input.nextLine();
+                
+                manager.updateEmployee(idToUpdate, newSalary, newBonus);
 
-                System.out.println("Exit");
+            } else if (choice == 4) {
+                
+                manager.saveAll(); 
+                System.out.println("Exiting the system. Data saved.");
                 break;
 
             } else {
-                System.out.println("Invalid choice.");
-            }
-        }
     }
 }
+    }
+}
+
 
