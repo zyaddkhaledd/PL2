@@ -2,7 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package pl2;
+package pl2
+
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -13,8 +14,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 public class EmployeeFileHandler {
-    private static final String FILE_PATH = "employees.txt"; 
-
+    private static final String FILE_PATH = "employees.txt";
+    
     public static ArrayList<Employee> loadEmployees() {
         ArrayList<Employee> employees = new ArrayList<>();
         
