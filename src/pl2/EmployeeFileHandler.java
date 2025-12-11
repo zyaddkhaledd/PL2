@@ -14,7 +14,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 public class EmployeeFileHandler {
-    private static final String FILE_PATH = "src\\pl2\\DF\\employees.txt";
+    private static final String FILE_PATH = "C:\Users\Haidi\OneDrive\اسناد\GitHub\PL2\src\pl2\DF\employees.txt";
 ;
     
     public static ArrayList<Employee> loadEmployees() {
@@ -76,5 +76,9 @@ public class EmployeeFileHandler {
         } catch (IOException e) {
             System.err.println("Error saving employees data: " + e.getMessage());
         }
+    }
+
+    public static String getFilePath() {
+        return FILE_PATH;
     }
 }
