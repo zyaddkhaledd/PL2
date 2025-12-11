@@ -1,1 +1,2 @@
-1
+ID|Name|Password|Role|Salary|Bonus|PhoneNumber|Department
+226630|haidy adel ahmed |760000|Employee|90000.0|5000.0|1110995093|HR
