@@ -12,12 +12,48 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
         Scanner input = new Scanner(System.in);
         EmployeeManager manager = new EmployeeManager();
+        User currentUser = null;
+
+        while (currentUser == null) {
+            System.out.println("\n===== Welcome =====");
+            System.out.println("1) Login");
+            System.out.println("2) Sign Up");
+            System.out.print("Choose: ");
+            int choice = input.nextInt();
+            input.nextLine();
+
+            if (choice == 1) {
+                System.out.print("Enter Name: ");
+                String name = input.nextLine();
+                System.out.print("Enter Password: ");
+                String password = input.nextLine();
+                currentUser = UserFileHandler.login(name, password);
+                if (currentUser == null) {
+                    System.out.println("Login failed. Try again.");
+                } else {
+                    System.out.println("Login successful. Welcome " + currentUser.getName());
+                }
+            } else if (choice == 2) {
+                System.out.print("Enter ID: ");
+                int id = input.nextInt();
+                input.nextLine();
+                System.out.print("Enter Name: ");
+                String name = input.nextLine();
+                System.out.print("Enter Email: ");
+                String email = input.nextLine();
+                System.out.print("Enter Password: ");
+                String password = input.nextLine();
+                User newUser = new Employee(id, name, password, email, 0, 0, 0, "");
+                UserFileHandler.addUser(newUser);
+                System.out.println("Sign Up successful. You can now login.");
+            } else {
+                System.out.println("Invalid choice. Try again.");
+            }
+        }
 
         while (true) {
-
             System.out.println("\n===== Employee System =====");
             System.out.println("1) Add Employee");
             System.out.println("2) Show All Employees");
@@ -29,68 +65,48 @@ public class Main {
             input.nextLine();
 
             if (choice == 1) {
-
                 System.out.print("Enter ID: ");
                 int id = input.nextInt();
                 input.nextLine();
-
                 System.out.print("Enter Name: ");
                 String name = input.nextLine();
-
                 System.out.print("Enter Email: ");
                 String email = input.nextLine();
-
                 System.out.print("Enter Password: ");
                 String password = input.nextLine();
-
                 System.out.print("Enter Salary: ");
                 double salary = input.nextDouble();
-
                 System.out.print("Enter Bonus: ");
                 double bonus = input.nextDouble();
-
                 System.out.print("Enter Phone: ");
                 int phone = input.nextInt();
                 input.nextLine();
-
                 System.out.print("Enter Department: ");
                 String dep = input.nextLine();
-
                 Employee emp = new Employee(id, name, password, email, salary, bonus, phone, dep);
                 manager.addEmployee(emp);
-
             } else if (choice == 2) {
                 System.out.println("All Employees");
                 manager.displayAll();
-
             } else if (choice == 3) {
-
                 System.out.print("Enter ID of Employee to Update: ");
                 int idToUpdate = input.nextInt();
-
                 System.out.print("Enter NEW Salary: ");
                 double newSalary = input.nextDouble();
-
                 System.out.print("Enter NEW Bonus: ");
                 double newBonus = input.nextDouble();
                 input.nextLine();
-
                 manager.updateEmployee(idToUpdate, newSalary, newBonus);
-
             } else if (choice == 4) {
-
                 System.out.print("Enter ID of Employee to Delete: ");
                 int idToDelete = input.nextInt();
                 input.nextLine();
                 manager.deleteEmployee(idToDelete);
-
             } else if (choice == 5) {
-
                 manager.saveAll();
                 System.out.println("Exiting the system. Data saved.");
                 break;
-
-            } 
+            }
         }
     }
 }
