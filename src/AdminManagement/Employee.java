@@ -13,19 +13,19 @@ public class Employee extends User {
     private double salary;
     private double bonus;
     private int phoneNumber;
-    private EmployeeType type; 
+    private String employeeType; 
 
     public Employee() { }
 
-    public Employee(int id, String name, String password, Role role,
+    public Employee(int id, String name, String password, String email,
                     double salary, double bonus, int phoneNumber,
-                    EmployeeType type) {
+                    String employeeType) {
 
-        super(id, name, password, role);
+        super(id, name, password, email, Role.Employee);
         this.salary = salary;
         this.bonus = bonus;
         this.phoneNumber = phoneNumber;
-        this.type = type; 
+        this.employeeType = employeeType;
     }
 
     public double getSalary() {
@@ -51,22 +51,23 @@ public class Employee extends User {
     public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-    
-    public EmployeeType getEmployeeType() {
-        return type;
+
+    public String getEmployeeType() {
+        return employeeType;
     }
 
-    public void setEmployeeType(EmployeeType type) {
-        this.type = type;
+    public void setEmployeeType(String employeeType) {
+        this.employeeType = employeeType;
     }
 
     @Override
     public String toString() {
         return "ID: " + getId() +
                " | Name: " + getName() +
+               " | Email: " + getEmail() +
                " | Salary: " + salary +
                " | Bonus: " + bonus +
                " | Phone: " + phoneNumber +
-               " | Department: " + type.getDepartment();
+               " | Type: " + employeeType;
     }
 }

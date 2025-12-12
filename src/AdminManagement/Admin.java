@@ -12,7 +12,7 @@ public class Admin extends User {
 
     public Admin() {}
 
-    public Admin(int id, String name, String password) {
-        super(id, name, password, Role.Admin);
+    public Admin(int id, String name, String password, String email) {
+        super(id, name, password, email, Role.Admin);
     }
 }

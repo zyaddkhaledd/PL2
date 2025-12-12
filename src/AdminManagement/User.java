@@ -8,15 +8,19 @@ enum Role {Admin, Employee, Leader}
 public abstract class User {
 
     private int id;
-    private String name,password;
+    private String name;
+    private String password;
+    private String email;
+    private boolean active = true;
     private Role role;
 
     public User() { }
 
-    public User(int id, String name, String password, Role role) {
+    public User(int id, String name, String password, String email, Role role) {
         this.id = id;
         this.name = name;
         this.password = password;
+        this.email = email;
         this.role = role;
     }
 
@@ -28,6 +32,12 @@ public abstract class User {
 
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
+
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
+
+    public boolean isActive() { return active; }
+    public void setActive(boolean active) { this.active = active; }
 
     public Role getRole() { return role; }
     public void setRole(Role role) { this.role = role; }

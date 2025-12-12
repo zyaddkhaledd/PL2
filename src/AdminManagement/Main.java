@@ -21,8 +21,9 @@ public class Main {
             System.out.println("\n===== Employee System =====");
             System.out.println("1) Add Employee");
             System.out.println("2) Show All Employees");
-            System.out.println("3) Update Employee Data"); 
-            System.out.println("4) Exit");
+            System.out.println("3) Update Employee Data");
+            System.out.println("4) Delete Employee");
+            System.out.println("5) Exit");
             System.out.print("Choose: ");
             int choice = input.nextInt();
             input.nextLine();
@@ -35,6 +36,9 @@ public class Main {
 
                 System.out.print("Enter Name: ");
                 String name = input.nextLine();
+
+                System.out.print("Enter Email: ");
+                String email = input.nextLine();
 
                 System.out.print("Enter Password: ");
                 String password = input.nextLine();
@@ -52,49 +56,41 @@ public class Main {
                 System.out.print("Enter Department: ");
                 String dep = input.nextLine();
 
-                EmployeeType type = new EmployeeType(dep);
-
-                Employee emp = new Employee(
-                        id,
-                        name,
-                        password,
-                        Role.Employee,
-                        salary,
-                        bonus,
-                        phone,
-                        type
-                );
-
+                Employee emp = new Employee(id, name, password, email, salary, bonus, phone, dep);
                 manager.addEmployee(emp);
 
             } else if (choice == 2) {
-                System.out.println(" All Employees");
+                System.out.println("All Employees");
                 manager.displayAll();
 
             } else if (choice == 3) {
-                
+
                 System.out.print("Enter ID of Employee to Update: ");
                 int idToUpdate = input.nextInt();
-                
+
                 System.out.print("Enter NEW Salary: ");
                 double newSalary = input.nextDouble();
-                
+
                 System.out.print("Enter NEW Bonus: ");
                 double newBonus = input.nextDouble();
                 input.nextLine();
-                
+
                 manager.updateEmployee(idToUpdate, newSalary, newBonus);
 
             } else if (choice == 4) {
-                
-                manager.saveAll(); 
+
+                System.out.print("Enter ID of Employee to Delete: ");
+                int idToDelete = input.nextInt();
+                input.nextLine();
+                manager.deleteEmployee(idToDelete);
+
+            } else if (choice == 5) {
+
+                manager.saveAll();
                 System.out.println("Exiting the system. Data saved.");
                 break;
 
-            } else {
+            } 
+        }
     }
 }
-    }
-}
-
-
