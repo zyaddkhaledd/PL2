@@ -1,9 +1,5 @@
- /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package AdminManagement;
 
+package AdminManagement;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -15,7 +11,7 @@ import java.util.ArrayList;
 
 public class EmployeeFileHandler {
 
-    private static final String FILE_PATH = "src/AdminManagement/DF/employees.txt";
+    private static final String FILE_PATH = "C:\\Users\\msi\\Documents\\GitHub\\PL2\\src\\AdminManagement\\DF\\employees.txt";
 
     public static ArrayList<Employee> loadEmployees() {
         ArrayList<Employee> employees = new ArrayList<>();
@@ -23,7 +19,7 @@ public class EmployeeFileHandler {
         try (BufferedReader reader = new BufferedReader(new FileReader(FILE_PATH))) {
             String line;
 
-            reader.readLine(); 
+            reader.readLine();
 
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split("\\|");
@@ -62,14 +58,14 @@ public class EmployeeFileHandler {
             writer.println("ID|Name|Email|Password|Salary|Bonus|PhoneNumber|Type");
 
             for (Employee e : employees) {
-                String line = e.getId() + "|" +
-                              e.getName() + "|" +
-                              e.getEmail() + "|" +
-                              e.getPassword() + "|" +
-                              e.getSalary() + "|" +
-                              e.getBonus() + "|" +
-                              e.getPhoneNumber() + "|" +
-                              e.getEmployeeType();
+                String line = e.getId() + "|"
+                        + e.getName() + "|"
+                        + e.getEmail() + "|"
+                        + e.getPassword() + "|"
+                        + e.getSalary() + "|"
+                        + e.getBonus() + "|"
+                        + e.getPhoneNumber() + "|"
+                        + e.getEmployeeType();
                 writer.println(line);
             }
 

@@ -1,20 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
+
 package AdminManagement;
 
-/**
- *
- * @author ZYAD KHALED
- */
+
 import java.util.ArrayList;
 
 public class EmployeeManager {
 
-    private ArrayList<Employee> employees; 
+    private ArrayList<Employee> employees;
+
     public EmployeeManager() {
-        this.employees = EmployeeFileHandler.loadEmployees(); 
+        this.employees = EmployeeFileHandler.loadEmployees();
     }
 
     public Employee findEmployee(int id) {
@@ -28,7 +24,7 @@ public class EmployeeManager {
 
     public void addEmployee(Employee e) {
         employees.add(e);
-        EmployeeFileHandler.saveEmployees(employees); 
+        EmployeeFileHandler.saveEmployees(employees);
         System.out.println("Employee added successfully and saved to file!");
     }
 
@@ -36,12 +32,12 @@ public class EmployeeManager {
         Employee employeeToUpdate = findEmployee(id);
 
         if (employeeToUpdate != null) {
-            
+
             employeeToUpdate.setSalary(newSalary);
             employeeToUpdate.setBonus(newBonus);
 
-            EmployeeFileHandler.saveEmployees(employees); 
-            
+            EmployeeFileHandler.saveEmployees(employees);
+
             System.out.println("Employee ID: " + id + " updated successfully!");
             return true;
         } else {
@@ -49,15 +45,15 @@ public class EmployeeManager {
             return false;
         }
     }
-    
-       public boolean deleteEmployee(int id) {
+
+    public boolean deleteEmployee(int id) {
         Employee employeeToDelete = findEmployee(id);
-        
+
         if (employeeToDelete != null) {
             employees.remove(employeeToDelete);
-            
-            EmployeeFileHandler.saveEmployees(employees); 
-            
+
+            EmployeeFileHandler.saveEmployees(employees);
+
             System.out.println("Employee ID: " + id + " deleted successfully!");
             return true;
         } else {
@@ -76,7 +72,8 @@ public class EmployeeManager {
             System.out.println(e);
         }
     }
-            public void saveAll() {
+
+    public void saveAll() {
         EmployeeFileHandler.saveEmployees(employees);
     }
 }

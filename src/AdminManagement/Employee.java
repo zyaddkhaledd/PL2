@@ -1,25 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package AdminManagement;
 
-/**
- *
- * @author ZYAD KHALED
- */
 public class Employee extends User {
 
     private double salary;
     private double bonus;
     private int phoneNumber;
-    private String employeeType; 
+    private String employeeType;
 
-    public Employee() { }
+    public Employee() {
+    }
 
     public Employee(int id, String name, String password, String email,
-                    double salary, double bonus, int phoneNumber,
-                    String employeeType) {
+            double salary, double bonus, int phoneNumber,
+            String employeeType) {
 
         super(id, name, password, email, Role.Employee);
         this.salary = salary;
@@ -62,12 +55,12 @@ public class Employee extends User {
 
     @Override
     public String toString() {
-        return "ID: " + getId() +
-               " | Name: " + getName() +
-               " | Email: " + getEmail() +
-               " | Salary: " + salary +
-               " | Bonus: " + bonus +
-               " | Phone: " + phoneNumber +
-               " | Type: " + employeeType;
+        return "ID: " + getId()
+                + " | Name: " + getName()
+                + " | Email: " + getEmail()
+                + " | Salary: " + salary
+                + " | Bonus: " + bonus
+                + " | Phone: " + phoneNumber
+                + " | Type: " + employeeType;
     }
 }
