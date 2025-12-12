@@ -1,1 +1,2 @@
 ID|Name|Email|Password|Role
+12345|zyad|zyad@gmail.com|zyad1234|Employee
