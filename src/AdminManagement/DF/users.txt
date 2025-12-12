@@ -1,2 +1,3 @@
 ID|Name|Email|Password|Role
 12345|zyad|zyad@gmail.com|zyad1234|Employee
+202519|nour |nour1885@gmail.com|336644|Employee
