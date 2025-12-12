@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package pl2;
+package AdminManagement;
 
 /**
  *
@@ -10,7 +10,7 @@ package pl2;
  */
 import java.util.Scanner;
 
-public class PL2 {
+public class Main {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
