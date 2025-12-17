@@ -1,5 +1,5 @@
 ID|Name|Email|Password|Role
-12345|zyad|zyad@gmail.com|zyad1234|Admine
-202519|nour |nour1885@gmail.com|336644|Admin
-202020|zyad|zyad@gmail.com|zyad12345|Admin
-12345|ali|ali@gmail.com|ali1234|Admin
+12345|zyad|zyad@gmail.com|zyad1234|Employee
+202519|nour |nour1885@gmail.com|336644|Employee
+202020|zyad|zyad@gmail.com|zyad12345|Employee
+12345|ali|ali@gmail.com|ali1234|AEmployee 

@@ -35,14 +35,20 @@ public class LoginFrame extends JFrame {
                 String name = userField.getText();
                 String pass = new String(passField.getPassword());
 
-              
                 User user = UserFileHandler.login(name, pass);
 
                 if (user != null) {
                     JOptionPane.showMessageDialog(null, "Welcome " + user.getName());
                     
+                    if (user instanceof Admin) {
+                        AdminDashboard adminPage = new AdminDashboard((Admin) user);
+                        adminPage.setVisible(true); 
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Employee Dashboard is under development.");
+                    }
                     dispose(); 
                 } else {
+                    
                     JOptionPane.showMessageDialog(null, "Invalid Name or Password!", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
@@ -50,7 +56,6 @@ public class LoginFrame extends JFrame {
     }
 
     public static void main(String[] args) {
-    
         SwingUtilities.invokeLater(() -> {
             new LoginFrame().setVisible(true);
         });
