@@ -15,3 +15,4 @@ public class Admin extends User {
         return manager;
     }
 }
+

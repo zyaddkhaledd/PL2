@@ -28,24 +28,29 @@ public class EmployeeManager {
         System.out.println("Employee added successfully and saved to file!");
     }
 
-    public boolean updateEmployee(int id, double newSalary, double newBonus) {
-        Employee employeeToUpdate = findEmployee(id);
-
-        if (employeeToUpdate != null) {
-
-            employeeToUpdate.setSalary(newSalary);
-            employeeToUpdate.setBonus(newBonus);
-
-            EmployeeFileHandler.saveEmployees(employees);
-
-            System.out.println("Employee ID: " + id + " updated successfully!");
-            return true;
-        } else {
-            System.out.println("Error: Employee with ID " + id + " not found. Update failed.");
-            return false;
-        }
+   public boolean updateEmployee(int id, String newName, String newEmail, double newSalary, double newBonus, int newPhone, String newType) {
+    Employee emp = findEmployee(id); 
+    
+    if (emp != null) {
+        
+        emp.setName(newName);
+        emp.setEmail(newEmail);
+        emp.setSalary(newSalary);
+        emp.setBonus(newBonus);
+        emp.setPhoneNumber(newPhone);
+        emp.setEmployeeType(newType);
+        
+       
+        EmployeeFileHandler.saveEmployees(employees); 
+        
+        System.out.println("Employee ID: " + id + " updated successfully!");
+        return true;
+    } else {
+        System.out.println("Error: Employee ID " + id + " not found.");
+        return false;
     }
-
+}
+   
     public boolean deleteEmployee(int id) {
         Employee employeeToDelete = findEmployee(id);
 
