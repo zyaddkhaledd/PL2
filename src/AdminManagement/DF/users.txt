@@ -3,3 +3,4 @@ ID|Name|Email|Password|Role
 202519|nour |nour1885@gmail.com|336644|Employee
 202020|zyad|zyad@gmail.com|zyad12345|Employee
 12345|ali|ali@gmail.com|ali1234|AEmployee 
+1514|ali zein|ali@gmail.com|14226|Employee

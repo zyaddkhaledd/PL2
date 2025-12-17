@@ -1,3 +1,4 @@
 ID|Name|Email|Password|Salary|Bonus|PhoneNumber|Type
 226630|haidy adel ahmed |760000|Employee|90000.0|5000.0|1110995093|HR
 20240001|zyad khaled ahmed|zyad@gmail.com|zyad12345|20000.0|800.0|1009883882|CS
+1514|ali zein|ali@gmail.com|14226|8000.0|2500.0|1110886699|FullTime
